@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JavaScript Countdown Timer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href=" ">
+
+
+<style>
+
+
+
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+ 
+<section> 
+<div>Today's Date is </div>
+
+</section> 
+ 
+ 
+<section>
+
+
+   <section class="one">
+     <div class="for_days">DAYS</div>
+     <div class="days_date"></div>
+   </section>
+
+   <section class="two">
+     <div class="for_hours">HOURS</div>
+     <div class="hours_date"></div>
+   </section>
+
+   <section class="three">
+     <div class="for_minutes">MINUTES</div>
+     <div class="minutes_date"></div>
+   </section>
+
+   <section class="four">
+     <div class="for_seconds">SECONDS</div>
+     <div class="seconds_date"></div>
+   </section>
+
+
+</section> 
+ 
+ 
+<section>
+
+  <div>Remaining Days To</div>
+    <div>
+     <div>Your Special Day </div>
+     <div class="special_day"></div>
+  </div>
+
+</section> 
+ 
+ 
+<div id="demo"></div> 
+  
+  
+  
+<script>
+
+var date_now = new Date().getTime();
+console.log(date_now);
+
+
+var count_down_date = new Date("Jan 5, 2021 15:37:25").getTime();
+
+function myfunc(){
+		
+var now = new Date().getTime;
+
+var diff = count_down_date - date_now;
+
+var days = Math.floor(diff / (1000*60*60*24));
+var hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60) );
+var minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
+var seconds = Math.floor((diff % (1000*60)) / (1000));
+
+document.getElementById("demo").innerHTML = "It remains " + days + "days, " + hours + "hours " + minutes + "minutes and " + seconds + "seconds";
+
+if (diff < 0){
+		clearInterval(myfunc);
+		}
+
+}
+
+setInterval(myfunc,1000);
+
+
+
+
+
+
+
+
+
+
+</script>  
+  
+</body>
+
+
+</html>
